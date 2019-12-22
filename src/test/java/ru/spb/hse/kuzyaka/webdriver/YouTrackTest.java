@@ -95,6 +95,7 @@ public class YouTrackTest {
         runGoodTest("a", false);
         runBadTest("a", "Value should be unique: login");
         usersPage.deleteUser("a");
+        usersPage.refresh();
     }
 
     @Test
@@ -110,6 +111,7 @@ public class YouTrackTest {
         runBadTest(longLogin1, "Value should be unique: login");
         runBadTest(veryLongLogin, "Value should be unique: login");
         usersPage.deleteUser(longLogin);
+        usersPage.refresh();
     }
 
     @Test
@@ -154,6 +156,7 @@ public class YouTrackTest {
 
         if (toDelete) {
             usersPage.deleteUser(login);
+            usersPage.refresh();
         }
     }
 
@@ -161,5 +164,6 @@ public class YouTrackTest {
         usersPage.createUser(login, "pwd");
         assertEquals(expected, usersPage.getSeverityErrorString());
         usersPage.cancelCreation();
+        usersPage.refresh();
     }
 }

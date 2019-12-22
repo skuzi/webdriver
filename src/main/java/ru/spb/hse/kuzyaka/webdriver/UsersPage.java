@@ -120,6 +120,7 @@ public class UsersPage {
                 user.findElement(By.xpath(USERS_TABLE_DELETE_BUTTON_XPATH)).click();
                 wait.until(alertIsPresent());
                 driver.switchTo().alert().accept();
+                break;
             }
         }
     }
