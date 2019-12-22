@@ -146,8 +146,7 @@ public class UsersPage {
 
     private void enterLogin(String login) {
         WebElement loginField = driver.findElement(By.xpath(LOGIN_FIELD_XPATH));
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(login), null);
         loginField.clear();
-        loginField.sendKeys(Keys.CONTROL + "v");
+        loginField.sendKeys(login);
     }
 }
